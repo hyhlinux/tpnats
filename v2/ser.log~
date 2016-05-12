@@ -1,0 +1,165 @@
+gnatsd$ gorun main.go 
+[21994] 2016/05/12 23:40:45.313928 [INF] Starting nats-server version 0.8.0
+[21994] 2016/05/12 23:40:45.314072 [INF] Listening for client connections on 0.0.0.0:4222
+[21994] 2016/05/12 23:40:45.314177 [INF] Server is ready
+Server cid: 1
+S info: INFO {"server_id":"UcVqJgEUmlf33sm34ZQr1A","version":"0.8.0","go":"go1.3.3","host":"0.0.0.0","port":4222,"auth_required":false,"ssl_required":false,"tls_required":false,"tls_verify":false,"max_payload":1048576} 
+
+S C bf read: 
+S C cid: 1
+S C read n: 129
+S C cid: 1
+len(b): 512
+string(b[:6]): CONNECT
+b[0]: CONNECT
+true
+S C af read: CONNECT {"verbose":false,"pedantic":false,"tls_required":false,"name":"","lang":"go","version":"1.2.0","devId":"devidt3"}
+PING
+
+S C Parse: [123 34 118 101 114 98 111 115 101 34 58 102 97 108 115 101 44 34 112 101 100 97 110 116 105 99 34 58 102 97 108 115 101 44 34 116 108 115 95 114 101 113 117 105 114 101 100 34 58 102 97 108 115 101 44 34 110 97 109 101 34 58 34 34 44 34 108 97 110 103 34 58 34 103 111 34 44 34 118 101 114 115 105 111 110 34 58 34 49 46 50 46 48 34 44 34 100 101 118 73 100 34 58 34 100 101 118 105 100 116 51 34 125]
+S C c.opts.devId: 
+S C c.opts.devId: devidt3
+S C _______________________
+S C cid: 1
+client: devidt3
+S C ~~~~~~~~~~~~~~~~~~~~~
+S C bf read: 
+S C cid: 1
+S C read n: 13
+S C cid: 1
+len(b): 256
+string(b[:6]): SUB tes
+b[0]: SUB tes
+false
+S C af read: SUB test  1
+
+S C bf read: 
+S C cid: 1
+Server cid: 2
+S info: INFO {"server_id":"UcVqJgEUmlf33sm34ZQr1A","version":"0.8.0","go":"go1.3.3","host":"0.0.0.0","port":4222,"auth_required":false,"ssl_required":false,"tls_required":false,"tls_verify":false,"max_payload":1048576} 
+
+S C bf read: 
+S C cid: 2
+S C read n: 129
+S C cid: 2
+len(b): 512
+string(b[:6]): CONNECT
+b[0]: CONNECT
+true
+S C af read: CONNECT {"verbose":false,"pedantic":false,"tls_required":false,"name":"","lang":"go","version":"1.2.0","devId":"devidt2"}
+PING
+
+S C Parse: [123 34 118 101 114 98 111 115 101 34 58 102 97 108 115 101 44 34 112 101 100 97 110 116 105 99 34 58 102 97 108 115 101 44 34 116 108 115 95 114 101 113 117 105 114 101 100 34 58 102 97 108 115 101 44 34 110 97 109 101 34 58 34 34 44 34 108 97 110 103 34 58 34 103 111 34 44 34 118 101 114 115 105 111 110 34 58 34 49 46 50 46 48 34 44 34 100 101 118 73 100 34 58 34 100 101 118 105 100 116 50 34 125]
+S C c.opts.devId: 
+S C c.opts.devId: devidt2
+S C _______________________
+S C cid: 1
+client: devidt3
+S C devId not exist
+S C cid: 2
+client: devidt2
+S C ~~~~~~~~~~~~~~~~~~~~~
+S C bf read: 
+S C cid: 2
+S C read n: 13
+S C cid: 2
+len(b): 256
+string(b[:6]): SUB tes
+b[0]: SUB tes
+false
+S C af read: SUB test  1
+
+S C bf read: 
+S C cid: 2
+Server cid: 3
+S info: INFO {"server_id":"UcVqJgEUmlf33sm34ZQr1A","version":"0.8.0","go":"go1.3.3","host":"0.0.0.0","port":4222,"auth_required":false,"ssl_required":false,"tls_required":false,"tls_verify":false,"max_payload":1048576} 
+
+S C bf read: 
+S C cid: 3
+S C read n: 129
+S C cid: 3
+len(b): 512
+string(b[:6]): CONNECT
+b[0]: CONNECT
+true
+S C af read: CONNECT {"verbose":false,"pedantic":false,"tls_required":false,"name":"","lang":"go","version":"1.2.0","devId":"devidt1"}
+PING
+
+S C Parse: [123 34 118 101 114 98 111 115 101 34 58 102 97 108 115 101 44 34 112 101 100 97 110 116 105 99 34 58 102 97 108 115 101 44 34 116 108 115 95 114 101 113 117 105 114 101 100 34 58 102 97 108 115 101 44 34 110 97 109 101 34 58 34 34 44 34 108 97 110 103 34 58 34 103 111 34 44 34 118 101 114 115 105 111 110 34 58 34 49 46 50 46 48 34 44 34 100 101 118 73 100 34 58 34 100 101 118 105 100 116 49 34 125]
+S C c.opts.devId: 
+S C c.opts.devId: devidt1
+S C _______________________
+S C cid: 2
+client: devidt2
+S C devId not exist
+S C cid: 3
+client: devidt1
+S C cid: 1
+client: devidt3
+S C devId not exist
+S C ~~~~~~~~~~~~~~~~~~~~~
+S C bf read: 
+S C cid: 3
+S C read n: 13
+S C cid: 3
+len(b): 256
+string(b[:6]): SUB tes
+b[0]: SUB tes
+false
+S C af read: SUB test  1
+
+S C bf read: 
+S C cid: 3
+Server cid: 4
+S info: INFO {"server_id":"UcVqJgEUmlf33sm34ZQr1A","version":"0.8.0","go":"go1.3.3","host":"0.0.0.0","port":4222,"auth_required":false,"ssl_required":false,"tls_required":false,"tls_verify":false,"max_payload":1048576} 
+
+S C bf read: 
+S C cid: 4
+S C read n: 129
+S C cid: 4
+len(b): 512
+string(b[:6]): CONNECT
+b[0]: CONNECT
+true
+S C af read: CONNECT {"verbose":false,"pedantic":false,"tls_required":false,"name":"","lang":"go","version":"1.2.0","devId":"devidt1"}
+PING
+
+S C Parse: [123 34 118 101 114 98 111 115 101 34 58 102 97 108 115 101 44 34 112 101 100 97 110 116 105 99 34 58 102 97 108 115 101 44 34 116 108 115 95 114 101 113 117 105 114 101 100 34 58 102 97 108 115 101 44 34 110 97 109 101 34 58 34 34 44 34 108 97 110 103 34 58 34 103 111 34 44 34 118 101 114 115 105 111 110 34 58 34 49 46 50 46 48 34 44 34 100 101 118 73 100 34 58 34 100 101 118 105 100 116 49 34 125]
+S C c.opts.devId: 
+S C c.opts.devId: devidt1
+S C _______________________
+S C cid: 1
+client: devidt3
+S C devId not exist
+S C cid: 2
+client: devidt2
+S C devId not exist
+S C cid: 3
+client: devidt1
+S C bf process: send PING
+S C devId real exists & will close this connection
+S C closeConnection...start
+S C closeConnection...start 4
+S C closeConnection...end 4
+S C closeConnection...end
+S C remove c  start
+s remove client early. 4 4
+S C delete ...start
+S C delete ... end
+s remove client after . 4 4
+S C remove c end
+S C ~~~~~~~~~~~~~~~~~~~~~
+S C read n: 6
+S C cid: 3
+len(b): 128
+string(b[:6]): PONG
+
+b[0]: PONG
+
+false
+S C af read: PONG
+
+S C bf read: PONG
+
+S C cid: 3
+^C[21994
